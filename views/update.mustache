@@ -1,0 +1,36 @@
+<html>
+<head></head>
+<body>
+<h1>Edit Blog Post</h1>
+<div>
+    <a href="http://localhost:3000/"><button>View All Blog Posts</button></a>
+</div>
+<p></p>
+<div>    
+    <form method="POST" action="/update-post">
+        <div style="display:flex; flex-direction:column; width:50%">
+            <input type="text" value="{{title}}" name="title" />
+            <textarea name="body">{{body}}</textarea>
+            <input type="text" value="{{category}}" name="category" />
+            <input type="hidden" value={{id}} name="id" />
+            
+        </div>
+        <button>Save</button>
+    </form>
+ </div>
+ <ul>
+
+        <li>
+            <p><b>ID: </b>{{id}}</p>            
+            <p><b>Title: </b>{{title}}</p>
+            <p><b>Body: </b>{{body}}</p>
+            <p><b>Category: </b>{{category}}</p>
+            <form method="POST" action="/delete-post"> 
+                <input type="hidden" value="{{id}}"  name="id"/>
+                <button>Delete</button> 
+            </form>
+        </li>
+
+</ul>
+</body>
+</html>
